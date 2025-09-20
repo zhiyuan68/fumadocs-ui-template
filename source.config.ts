@@ -1,15 +1,17 @@
-import { defineConfig, defineCollections, frontmatterSchema } from 'fumadocs-mdx/config';
+import { defineConfig, defineDocs, frontmatterSchema } from 'fumadocs-mdx/config';
 import { z } from 'zod';
 
-// Define a collection for blog posts stored in `content/blog`.
-// Each post must include a title, description and publish date in the frontmatter.
-export const blog = defineCollections({
-  type: 'doc',
+// Define the blog as a docs collection so we get both MDX pages and metadata.
+// Each post lives in `content/blog` and must include a title, description, and
+// publish date in the frontmatter. Tags are optional but useful for grouping.
+export const blog = defineDocs({
   dir: 'content/blog',
-  schema: frontmatterSchema.extend({
-    date: z.coerce.date(),
-    tags: z.array(z.string()).default([]),
-  }),
+  docs: {
+    schema: frontmatterSchema.extend({
+      date: z.coerce.date(),
+      tags: z.array(z.string()).default([]),
+    }),
+  },
 });
 
 export default defineConfig({
