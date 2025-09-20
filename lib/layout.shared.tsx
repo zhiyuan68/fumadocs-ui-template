@@ -3,9 +3,8 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 /**
  * Shared layout configurations
  *
- * You can customise layouts individually from:
- * - Home layout: app/(home)/layout.tsx
- * - Blog layout: app/(blog)/layout.tsx
+ * You can customise the shared blog layout from:
+ * - app/(blog)/layout.tsx
  */
 export function baseOptions(): BaseLayoutProps {
   return {
@@ -25,13 +24,7 @@ export function baseOptions(): BaseLayoutProps {
       ),
       url: '/',
     },
-    // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [
-      {
-        text: 'Home',
-        url: '/',
-        type: 'nav',
-      },
-    ],
+    // Additional navigation links can be configured here if needed.
+    links: [],
   };
 }

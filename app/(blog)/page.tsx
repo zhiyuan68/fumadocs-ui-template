@@ -6,7 +6,7 @@ export const metadata = {
   description: 'Stories, notes, and experiments powered by Fumadocs.',
 };
 
-export default function HomePage() {
+export default function BlogIndexPage() {
   const posts = [...source.getPages()].sort((a, b) => {
     const dateA = getDate(a.data.date);
     const dateB = getDate(b.data.date);
@@ -42,7 +42,10 @@ export default function HomePage() {
           return (
             <article key={post.url} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <time dateTime={publishedAt.toISOString()} style={{ fontSize: '0.95rem', color: 'var(--muted-foreground, #666)' }}>
+                <time
+                  dateTime={publishedAt.toISOString()}
+                  style={{ fontSize: '0.95rem', color: 'var(--muted-foreground, #666)' }}
+                >
                   {formatDate(publishedAt)}
                 </time>
                 {post.data.tags && post.data.tags.length > 0 ? (

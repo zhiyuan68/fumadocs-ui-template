@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { DocsBody } from 'fumadocs-ui/page';
 import { source } from '@/lib/source';
@@ -17,6 +18,7 @@ export default async function Page(props: BlogPageProps) {
 
   const MDXContent = page.data.body;
   const publishedAt = getDate(page.data.date);
+  const toc = page.data.toc ?? [];
 
   return (
     <article
@@ -74,6 +76,12 @@ export default async function Page(props: BlogPageProps) {
           ) : null}
         </div>
       </header>
+
+      {toc.length > 0 ? (
+        <InlineTOC items={toc}>
+          On this page
+        </InlineTOC>
+      ) : null}
 
       <DocsBody>
         <MDXContent
