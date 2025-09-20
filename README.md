@@ -28,8 +28,8 @@ In the project, you can see:
 
 | Route                              | Description                                           |
 | ---------------------------------- | ----------------------------------------------------- |
-| `app/page.tsx`                     | Landing page that lists all blog posts.               |
-| `app/[...slug]/page.tsx`           | Dynamic route that renders individual blog articles.  |
+| `app/(blog)/page.tsx`              | Landing page that lists all blog posts.               |
+| `app/(blog)/[...slug]/page.tsx`    | Dynamic route that renders individual blog articles.  |
 | `app/api/search/route.ts`          | Route handler for search across the blog content.     |
 
 ### Fumadocs MDX

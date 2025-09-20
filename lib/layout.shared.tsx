@@ -4,8 +4,8 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  * Shared layout configurations
  *
  * You can customise the shared blog layout from:
- * - app/page.tsx
- * - app/[...slug]/page.tsx
+ * - app/(blog)/page.tsx
+ * - app/(blog)/[...slug]/page.tsx
  */
 export function baseOptions(): BaseLayoutProps {
   return {
