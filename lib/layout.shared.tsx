@@ -3,9 +3,9 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 /**
  * Shared layout configurations
  *
- * you can customise layouts individually from:
- * Home Layout: app/(home)/layout.tsx
- * Docs Layout: app/docs/layout.tsx
+ * You can customise layouts individually from:
+ * - Home layout: app/(home)/layout.tsx
+ * - Blog layout: app/(blog)/layout.tsx
  */
 export function baseOptions(): BaseLayoutProps {
   return {
@@ -20,11 +20,18 @@ export function baseOptions(): BaseLayoutProps {
           >
             <circle cx={12} cy={12} r={12} fill="currentColor" />
           </svg>
-          My App
+          My Blog
         </>
       ),
+      url: '/',
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [],
+    links: [
+      {
+        text: 'Home',
+        url: '/',
+        type: 'nav',
+      },
+    ],
   };
 }

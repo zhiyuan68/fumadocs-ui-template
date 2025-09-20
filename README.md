@@ -1,7 +1,9 @@
-# fumadocs-ui-template
+# Fumadocs blog starter
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+This project was bootstrapped with
+[Create Fumadocs](https://github.com/fuma-nama/fumadocs) and adapted to ship a
+blog instead of a documentation website. The homepage lists the latest posts
+and each article is rendered from an MDX file in `content/blog`.
 
 Run development server:
 
@@ -13,26 +15,31 @@ pnpm dev
 yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+Open http://localhost:3000 with your browser to see the result. The root route
+(`/`) now shows the blog index.
 
 ## Explore
 
 In the project, you can see:
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+- `lib/source.ts`: Sets up the shared blog content source using [`loader()`](https://fumadocs.dev/docs/headless/source-api).
+- `lib/layout.shared.tsx`: Shared options for navigation across the blog.
+- `source.config.ts`: Defines the blog MDX collection and its frontmatter schema.
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+| Route                              | Description                                           |
+| ---------------------------------- | ----------------------------------------------------- |
+| `app/(home)`                       | Landing page that lists all blog posts.               |
+| `app/(blog)/[...slug]`             | Dynamic route that renders individual blog articles.  |
+| `app/api/search/route.ts`          | Route handler for search across the blog content.     |
 
 ### Fumadocs MDX
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+The `content/blog` directory holds the MDX posts. Create a new file and include
+frontmatter with a `title`, `description`, `date` and optional `tags` to add a
+new article.
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+Read the [blog guide](https://fumadocs.dev/blog/make-a-blog) and the
+[MDX Introduction](https://fumadocs.dev/docs/mdx) for further details.
 
 ## Learn More
 
