@@ -103,7 +103,7 @@ export function Hello() {
 
 When you need to compare multiple snippets, the code block tabs component keeps everything tidy:
 
-<CodeBlockTabs>
+<CodeBlockTabs defaultValue="npm">
   <CodeBlockTabsList>
     <CodeBlockTabsTrigger value="npm">npm</CodeBlockTabsTrigger>
     <CodeBlockTabsTrigger value="pnpm">pnpm</CodeBlockTabsTrigger>
@@ -131,9 +131,18 @@ When you need to compare multiple snippets, the code block tabs component keeps 
 ## Step-by-step walkthroughs
 
 <Steps>
-  <Step>Draft your post in `content/blog/your-post.mdx`.</Step>
-  <Step>Preview locally with `npm run dev`.</Step>
-  <Step>Commit and deploy—no additional build steps required.</Step>
+  <Step>
+    <h3>Draft the post</h3>
+    <p>Write your article in `content/blog/your-post.mdx`, adding metadata at the top.</p>
+  </Step>
+  <Step>
+    <h3>Preview locally</h3>
+    <p>Run `npm run dev` and confirm the table of contents, media, and code samples render correctly.</p>
+  </Step>
+  <Step>
+    <h3>Publish with confidence</h3>
+    <p>Commit the MDX file and push—Fumadocs handles the rest of the deployment pipeline.</p>
+  </Step>
 </Steps>
 
 ## Tabs for side-by-side comparisons

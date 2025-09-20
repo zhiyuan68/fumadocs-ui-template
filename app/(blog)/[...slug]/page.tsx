@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { DocsBody } from 'fumadocs-ui/page';
 import { source } from '@/lib/source';
 import { getMDXComponents } from '@/mdx-components';
+import { BlogInlineTOC } from '@/components/blog-inline-toc';
 
 type BlogPageProps = {
   params: Promise<{ slug?: string[] }>;
@@ -77,7 +77,9 @@ export default async function Page(props: BlogPageProps) {
         </div>
       </header>
 
-      {toc.length > 0 ? <InlineTOC items={toc}>On this page</InlineTOC> : null}
+      <BlogInlineTOC items={toc} defaultOpen>
+        On this page
+      </BlogInlineTOC>
 
       <DocsBody>
         <MDXContent
